@@ -57,7 +57,6 @@ export default class WeatherComponent extends LightningElement {
       }
 
     handleUpdate(event) {
-        console.log(this.city);
         if(!this.city){
             this.isWeatherFetched = false;
             this.showToast('Error','City cannot be empty!');
