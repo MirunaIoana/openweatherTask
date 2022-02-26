@@ -1,0 +1,28 @@
+<template>
+    <lightning-card  title="OpenWeather">
+        <div class="slds-card__body slds-card__body_inner">
+            <template if:true={isLoaded}>
+                <lightning-input-address
+                address-label="Address"
+                street-label="Street"
+                city-label="City"
+                country-label="Country"
+                province-label="State"
+                postal-code-label="PostalCode"
+                street={street}
+                city={city}
+                country={country}
+                province={state}
+                postal-code={postalCode}
+                field-level-help="Enter your address!"
+                onchange={handleChange}></lightning-input-address>
+                <lightning-button label="Check current weather" title="Non-primary action" onclick={handleUpdate} class="slds-align_absolute-center slds-p-top_medium"></lightning-button>
+                <template if:true={isWeatherFetched}>
+                    <div class="slds-text-align_center slds-p-top_medium">
+                        <lightning-badge label={currentWeather}></lightning-badge>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
